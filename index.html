@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都人才市场网-花都招聘求职信息平台与人才服务指南</title>
+    <meta name="description" content="花都人才市场网提供花都区企业招聘信息、个人求职简历、现场招聘会、人才政策及职业指导等全方位人力资源服务，助您高效招聘与求职。">
+    <meta name="keywords" content="花都人才市场网,花都招聘,花都求职,花都人才,花都找工作,花都现场招聘会,花都区人才服务">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f4f6f9;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        .site-header {
+            background: linear-gradient(135deg, #0b3b5c 0%, #1a5f7a 100%);
+            color: #fff;
+            padding: 18px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-area h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo-area span {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-left: 10px;
+            font-weight: 300;
+        }
+        .header-contact {
+            font-size: 14px;
+            text-align: right;
+        }
+        .header-contact p:first-child {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .header-contact i {
+            font-style: normal;
+            margin-right: 6px;
+        }
+
+        /* nav */
+        .main-nav {
+            background: #ffffff;
+            border-bottom: 2px solid #e9edf2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-list li a {
+            display: block;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a3a4e;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav-list li a:hover,
+        .nav-list li a.active {
+            color: #0b6e8f;
+            border-bottom-color: #0b6e8f;
+            background: #f0f7fa;
+        }
+
+        /* hero */
+        .hero {
+            background: linear-gradient(145deg, #e8f4f8 0%, #d1e7f0 100%);
+            padding: 48px 0 40px;
+            border-bottom: 1px solid #dce5ec;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h2 {
+            font-size: 32px;
+            color: #0b3b5c;
+            margin-bottom: 18px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .hero-text p {
+            font-size: 16px;
+            color: #2c4a5e;
+            margin-bottom: 10px;
+            max-width: 600px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .hero-stats .stat-item {
+            background: #fff;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center;
+            min-width: 100px;
+        }
+        .hero-stats .stat-item strong {
+            display: block;
+            font-size: 22px;
+            color: #0b6e8f;
+        }
+        .hero-stats .stat-item span {
+            font-size: 13px;
+            color: #5a7184;
+        }
+        .hero-actions {
+            flex: 0 0 260px;
+            background: #fff;
+            padding: 28px 22px;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .hero-actions h3 {
+            font-size: 18px;
+            color: #0b3b5c;
+            margin-bottom: 16px;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary {
+            background: #0b6e8f;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(11,110,143,0.2);
+        }
+        .btn-primary:hover {
+            background: #0a5c78;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: #fff;
+            color: #0b6e8f;
+            border: 2px solid #0b6e8f;
+        }
+        .btn-outline:hover {
+            background: #f0f7fa;
+        }
+
+        /* quick search */
+        .quick-search {
+            background: #fff;
+            padding: 24px 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+        .search-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-box input {
+            flex: 1 1 300px;
+            padding: 12px 18px;
+            border: 2px solid #d5e0e8;
+            border-radius: 30px;
+            font-size: 15px;
+            outline: none;
+            transition: border 0.2s;
+        }
+        .search-box input:focus {
+            border-color: #0b6e8f;
+        }
+        .search-box button {
+            padding: 12px 32px;
+            background: #0b6e8f;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .search-box button:hover {
+            background: #0a5c78;
+        }
+        .hot-tags {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 14px;
+            color: #5a7184;
+        }
+        .hot-tags a {
+            color: #0b6e8f;
+            margin: 0 8px;
+        }
+        .hot-tags a:hover {
+            text-decoration: underline;
+        }
+
+        /* sections */
+        .section {
+            padding: 40px 0;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0b3b5c;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid #0b6e8f;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .section-title a.more-link {
+            font-size: 14px;
+            font-weight: 400;
+            color: #0b6e8f;
+            border: 1px solid #0b6e8f;
+            padding: 4px 14px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        .section-title a.more-link:hover {
+            background: #0b6e8f;
+            color: #fff;
+        }
+
+        /* job cards */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .job-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .job-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-left-color: #0b6e8f;
+        }
+        .job-card h3 {
+            font-size: 18px;
+            color: #0b3b5c;
+            margin-bottom: 4px;
+        }
+        .job-card .company {
+            font-size: 14px;
+            color: #5a7184;
+            margin-bottom: 10px;
+        }
+        .job-card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 13px;
+        }
+        .job-card .meta span {
+            background: #eef3f7;
+            padding: 2px 10px;
+            border-radius: 20px;
+            color: #2c4a5e;
+        }
+        .job-card .salary {
+            color: #e67e22;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .job-card .date {
+            font-size: 12px;
+            color: #9aa8b5;
+            margin-top: 6px;
+        }
+
+        /* 招聘会 */
+        .fair-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .fair-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-top: 4px solid #0b6e8f;
+        }
+        .fair-item .fair-date {
+            background: #0b6e8f;
+            color: #fff;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .fair-item h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+            color: #0b3b5c;
+        }
+        .fair-item p {
+            font-size: 14px;
+            color: #5a7184;
+        }
+        .fair-item .fair-loc {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #0b6e8f;
+            background: #eaf4f8;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* 服务区 */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .service-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.2s;
+        }
+        .service-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+        .service-item .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .service-item h3 {
+            font-size: 17px;
+            color: #0b3b5c;
+            margin-bottom: 6px;
+        }
+        .service-item p {
+            font-size: 14px;
+            color: #5a7184;
+            line-height: 1.5;
+        }
+
+        /* 资讯 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .news-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+        }
+        .news-item:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+        }
+        .news-item h3 {
+            font-size: 16px;
+            color: #0b3b5c;
+            margin-bottom: 8px;
+        }
+        .news-item p {
+            font-size: 14px;
+            color: #5a7184;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-item .time {
+            font-size: 12px;
+            color: #9aa8b5;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* faq */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+        .faq-item details {
+            padding: 18px 24px;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 16px;
+            color: #0b3b5c;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            padding-right: 20px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 22px;
+            color: #0b6e8f;
+        }
+        .faq-item details[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            margin-top: 12px;
+            font-size: 15px;
+            color: #3d566e;
+            line-height: 1.8;
+        }
+
+        /* footer */
+        .site-footer {
+            background: #0b2a3a;
+            color: #b8cbd6;
+            padding: 40px 0 20px;
+            margin-top: 30px;
+        }
+        .footer-cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1a4055;
+        }
+        .footer-col h4 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .footer-col ul li a:hover {
+            color: #8fd0e8;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .header-contact {
+                text-align: center;
+            }
+            .nav-list li a {
+                padding: 12px 16px;
+                font-size: 15px;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-actions {
+                width: 100%;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .job-grid,
+            .fair-list,
+            .service-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-list li a {
+                padding: 10px 10px;
+                font-size: 14px;
+            }
+            .hero-text h2 {
+                font-size: 24px;
+            }
+            .search-box {
+                flex-direction: column;
+            }
+            .search-box input {
+                width: 100%;
+            }
+            .search-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <h1>花都人才市场网</h1>
+            <span>专业 · 高效 · 可信赖</span>
+        </div>
+        <div class="header-contact">
+            <p><i>📞</i> 服务热线：020-3680-1234（工作日 8:30-17:30）</p>
+            <p><i>📍</i> 广州市花都区新华街人才路8号</p>
+        </div>
+    </div>
+</header>
+
+<nav class="main-nav">
+    <div class="container">
+        <ul class="nav-list">
+            <li><a href="#" class="active">首页</a></li>
+            <li><a href="#">最新职位</a></li>
+            <li><a href="#">招聘会</a></li>
+            <li><a href="#">人才库</a></li>
+            <li><a href="#">企业服务</a></li>
+            <li><a href="#">政策指南</a></li>
+            <li><a href="#">职业培训</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-text">
+            <h2>花都区一站式人力资源服务平台</h2>
+            <p>为花都区企业提供精准招聘渠道，为求职者打造便捷高效的求职通道。覆盖汽车制造、皮革皮具、电子电器、物流商贸等本地优势产业。</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>3000+</strong>
+                    <span>在招企业</span>
+                </div>
+                <div class="stat-item">
+                    <strong>8500+</strong>
+                    <span>岗位数量</span>
+                </div>
+                <div class="stat-item">
+                    <strong>12000+</strong>
+                    <span>注册人才</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-actions">
+            <h3>快速开始</h3>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">立即发布招聘</a>
+                <a href="#" class="btn btn-outline">填写个人简历</a>
+                <a href="#" class="btn btn-outline">预约现场招聘会</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quick-search">
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="输入职位名称、公司或技能，如：注塑工、采购员、会计...">
+            <button>搜索职位</button>
+        </div>
+        <div class="hot-tags">
+            <span>热门搜索：</span>
+            <a href="#">普工</a>
+            <a href="#">质检员</a>
+            <a href="#">仓库管理员</a>
+            <a href="#">业务跟单</a>
+            <a href="#">平面设计</a>
+            <a href="#">CNC操作</a>
+            <a href="#">电工</a>
+        </div>
+    </div>
+</section>
+
+<main>
+    <!-- 最新职位 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>最新热门职位</h2>
+                <a href="#" class="more-link">查看全部职位</a>
+            </div>
+            <div class="job-grid">
+                <div class="job-card">
+                    <h3>自动化设备操作员</h3>
+                    <p class="company">广州德鑫汽车零部件有限公司</p>
+                    <div class="meta">
+                        <span>花都汽车城</span>
+                        <span>2年以上</span>
+                        <span>初中以上</span>
+                    </div>
+                    <div class="salary">月薪 6k-9k</div>
+                    <div class="date">2025-02-20</div>
+                </div>
+                <div class="job-card">
+                    <h3>皮具外贸业务员</h3>
+                    <p class="company">广州凯盛皮具有限公司</p>
+                    <div class="meta">
+                        <span>狮岭镇</span>
+                        <span>大专</span>
+                        <span>英语四级</span>
+                    </div>
+                    <div class="salary">月薪 8k-15k（含提成）</div>
+                    <div class="date">2025-02-20</div>
+                </div>
+                <div class="job-card">
+                    <h3>电商仓库理货员</h3>
+                    <p class="company">广州悦购供应链管理有限公司</p>
+                    <div class="meta">
+                        <span>花东镇</span>
+                        <span>经验不限</span>
+                        <span>提供食宿</span>
+                    </div>
+                    <div class="salary">月薪 5k-7k</div>
+                    <div class="date">2025-02-19</div>
+                </div>
+                <div class="job-card">
+                    <h3>电子工程师</h3>
+                    <p class="company">广州华科电子科技有限公司</p>
+                    <div class="meta">
+                        <span>新华街</span>
+                        <span>3年以上</span>
+                        <span>本科</span>
+                    </div>
+                    <div class="salary">月薪 12k-18k</div>
+                    <div class="date">2025-02-19</div>
+                </div>
+                <div class="job-card">
+                    <h3>餐饮店长储备干部</h3>
+                    <p class="company">花都区融创茂某连锁餐饮</p>
+                    <div class="meta">
+                        <span>融创茂</span>
+                        <span>1年以上</span>
+                        <span>高中</span>
+                    </div>
+                    <div class="salary">月薪 5.5k-7k</div>
+                    <div class="date">2025-02-18</div>
+                </div>
+                <div class="job-card">
+                    <h3>财务会计</h3>
+                    <p class="company">广州骏业包装制品有限公司</p>
+                    <div class="meta">
+                        <span>炭步镇</span>
+                        <span>2年经验</span>
+                        <span>初级职称</span>
+                    </div>
+                    <div class="salary">月薪 6k-8k</div>
+                    <div class="date">2025-02-18</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招聘会信息 -->
+    <section class="section" style="background: #eef4f8; padding-top: 40px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>近期现场招聘会</h2>
+                <a href="#" class="more-link">更多排期</a>
+            </div>
+            <div class="fair-list">
+                <div class="fair-item">
+                    <span class="fair-date">3月8日 周六</span>
+                    <h3>花都区“春风行动”大型综合招聘会</h3>
+                    <p>预设展位200个，涵盖制造、服务、电商等行业</p>
+                    <span class="fair-loc">📍 花都广场（主会场）</span>
+                </div>
+                <div class="fair-item">
+                    <span class="fair-date">3月15日 周六</span>
+                    <h3>狮岭皮革皮具产业专场招聘会</h3>
+                    <p>聚焦皮具设计、生产、外贸等岗位</p>
+                    <span class="fair-loc">📍 狮岭镇合成村文化广场</span>
+                </div>
+                <div class="fair-item">
+                    <span class="fair-date">3月22日 周六</span>
+                    <h3>花都汽车产业人才对接会</h3>
+                    <p>汽车零部件制造、技术研发类岗位为主</p>
+                    <span class="fair-loc">📍 花都区汽车城人才服务中心</span>
+                </div>
+                <div class="fair-item">
+                    <span class="fair-date">4月12日 周六</span>
+                    <h3>高校毕业生春季专场</h3>
+                    <p>面向应届及往届毕业生，提供实习与就业岗位</p>
+                    <span class="fair-loc">📍 华南理工大学广州学院（校内）</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心服务 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心服务板块</h2>
+            </div>
+            <div class="service-grid">
+                <div class="service-item">
+                    <span class="icon">📋</span>
+                    <h3>网络招聘</h3>
+                    <p>企业职位实时发布，简历在线投递，智能匹配推荐</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🏢</span>
+                    <h3>现场招聘会</h3>
+                    <p>每周定期举办行业专场及大型综合招聘会</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">💼</span>
+                    <h3>猎头服务</h3>
+                    <p>针对中高端管理及技术岗位提供精准寻访</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">📄</span>
+                    <h3>档案与人事代理</h3>
+                    <p>提供人事档案托管、职称评定申报等服务</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">🎓</span>
+                    <h3>职业指导与培训</h3>
+                    <p>简历优化、面试技巧、职业技能提升课程</p>
+                </div>
+                <div class="service-item">
+                    <span class="icon">📊</span>
+                    <h3>人才测评</h3>
+                    <p>为企业提供结构化面试及人才素质测评工具</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 人才政策与资讯 -->
+    <section class="section" style="background: #fafcff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>人才政策与最新资讯</h2>
+                <a href="#" class="more-link">更多资讯</a>
+            </div>
+            <div class="news-grid">
+                <div class="news-item">
+                    <h3>花都区发布新一年度产业人才引进补贴办法</h3>
+                    <p>符合条件的技术技能人才可申领每月数百元至千元不等的租房补贴，具体细则可咨询区人社局。</p>
+                    <span class="time">2025-02-18</span>
+                </div>
+                <div class="news-item">
+                    <h3>2025年花都区春季招聘活动正式启动</h3>
+                    <p>从2月下旬持续至4月，线上线下同步开展多场招聘会，预计提供岗位超万个。</p>
+                    <span class="time">2025-02-15</span>
+                </div>
+                <div class="news-item">
+                    <h3>灵活就业人员社保补贴申领指南更新</h3>
+                    <p>在花都区以灵活就业形式参保的人员，可按规定申请社保补贴，减轻个人缴费负担。</p>
+                    <span class="time">2025-02-12</span>
+                </div>
+                <div class="news-item">
+                    <h3>区人社局开展企业用工合规培训会</h3>
+                    <p>围绕劳动合同签订、工时休假制度等内容，面向区内中小企业进行免费辅导。</p>
+                    <span class="time">2025-02-10</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <details>
+                        <summary>如何通过花都人才市场网找工作？</summary>
+                        <p>求职者可在网站首页搜索心仪岗位，点击职位详情后在线投递简历。也可以注册个人账号完善简历，系统会根据您的求职意向自动推荐匹配岗位。此外，每周六在花都广场或各镇街举办的现场招聘会也欢迎直接携带简历到场与企业面谈。</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>企业发布招聘信息需要什么资质？</summary>
+                        <p>在花都区内依法注册、持有营业执照的企业或个体工商户，均可申请发布招聘信息。首次办理需提供营业执照副本复印件加盖公章、经办人身份证件，并填写招聘登记表。所有流程均免费。</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>现场招聘会展位如何预订？</summary>
+                        <p>企业可提前一周通过本网或电话预订展位。每场招聘会为每家参会企业提供标准展位一个（含一桌两椅及招聘海报）。因展位数量有限，建议热门排期尽早预订。</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>个人求职服务收费吗？</summary>
+                        <p>花都人才市场网对个人求职者完全免费开放，包括简历投递、参加现场招聘会以及使用职业测评工具。只有企业购买增值服务（如首页推荐位、简历下载包）才会产生相应费用。</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary>如何办理人事档案托管？</summary>
+                        <p>档案托管主要面向花都区户籍人员或在花都区就业的非户籍人员。需携带身份证、户口本（或劳动合同）到花都区人才交流服务中心办理调档手续，具体流程可拨打电话咨询。</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">中心简介</a></li>
+                    <li><a href="#">组织架构</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">交通指引</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>求职服务</h4>
+                <ul>
+                    <li><a href="#">个人注册</a></li>
+                    <li><a href="#">简历中心</a></li>
+                    <li><a href="#">职位搜索</a></li>
+                    <li><a href="#">面试技巧</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>企业服务</h4>
+                <ul>
+                    <li><a href="#">企业注册</a></li>
+                    <li><a href="#">职位管理</a></li>
+                    <li><a href="#">简历搜索</a></li>
+                    <li><a href="#">招聘会预订</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关链接</h4>
+                <ul>
+                    <li><a href="#">广州市人社局</a></li>
+                    <li><a href="#">花都区人民政府</a></li>
+                    <li><a href="#">花都区总工会</a></li>
+                    <li><a href="#">花都区人才网</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 花都人才市场网 版权所有 | 地址：广州市花都区新华街人才路8号 | 粤ICP备2025XXXXXX号-1</p>
+            <p style="margin-top:6px;">本网站为公益性人才服务平台，不收取求职者任何费用</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                      </html>

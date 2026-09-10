@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林予曦-演员资料与影视作品介绍</title>
+    <meta name="description" content="林予曦，中国内地女演员，以其清新自然的表演风格受到观众喜爱。了解林予曦的演艺经历、代表作品、最新动态及个人资料。">
+    <meta name="keywords" content="林予曦,演员林予曦,林予曦资料,林予曦作品,林予曦影视,林予曦最新动态">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 顶部导航 */
+        .top-bar {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .top-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #c9a86a;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            transition: color 0.3s;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover {
+            color: #c9a86a;
+            border-bottom-color: #c9a86a;
+        }
+        /* Hero区域 */
+        .hero {
+            background: linear-gradient(135deg, #faf7f2 0%, #f0ebe3 100%);
+            padding: 60px 0;
+            border-bottom: 1px solid #e0d8cf;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-content h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+        }
+        .hero-content .subtitle {
+            font-size: 18px;
+            color: #6b6b6b;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .hero-content p {
+            color: #4a4a4a;
+            font-size: 15px;
+            margin-bottom: 10px;
+            max-width: 600px;
+        }
+        .hero-avatar {
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(145deg, #e8ddd0, #d4c5b5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #a08b6e;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            margin: 0 auto;
+        }
+        /* 信息卡片 */
+        .info-section {
+            padding: 50px 0;
+            background: #ffffff;
+        }
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+            color: #1a1a1a;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #c9a86a;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .profile-item {
+            background: #faf9f8;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #c9a86a;
+        }
+        .profile-item .label {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .profile-item .value {
+            font-size: 16px;
+            color: #222;
+            font-weight: 500;
+        }
+        /* 作品区域 */
+        .works-section {
+            padding: 60px 0;
+            background: #f5f5f7;
+        }
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .work-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .work-poster {
+            height: 180px;
+            background: linear-gradient(145deg, #e0d6c9, #d0c2b0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #8b7b66;
+        }
+        .work-info {
+            padding: 20px;
+        }
+        .work-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .work-info .meta {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .work-info p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .tag {
+            display: inline-block;
+            background: #f0ebe3;
+            color: #8b6f4e;
+            padding: 3px 10px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-right: 6px;
+            margin-top: 8px;
+        }
+        /* 演艺经历 */
+        .experience-section {
+            padding: 60px 0;
+            background: #ffffff;
+        }
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #e0d6c9;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #c9a86a;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #c9a86a;
+        }
+        .timeline-item h4 {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .timeline-item .date {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .timeline-item p {
+            color: #555;
+            font-size: 15px;
+        }
+        /* 动态区域 */
+        .news-section {
+            padding: 60px 0;
+            background: #fafaf8;
+        }
+        .news-list {
+            list-style: none;
+        }
+        .news-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 15px;
+            align-items: baseline;
+        }
+        .news-list li:last-child {
+            border-bottom: none;
+        }
+        .news-date {
+            font-size: 14px;
+            color: #c9a86a;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        .news-text {
+            color: #333;
+            font-size: 15px;
+        }
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+        .faq-item {
+            background: #faf9f8;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .faq-item p {
+            color: #555;
+            font-size: 15px;
+        }
+        /* 页脚 */
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer .footer-links {
+            margin-bottom: 15px;
+        }
+        footer .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        footer .footer-links a:hover {
+            color: #c9a86a;
+        }
+        footer .copyright {
+            color: #777;
+            font-size: 13px;
+        }
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #c9a86a;
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+            z-index: 1000;
+            border: none;
+            font-size: 20px;
+        }
+        .back-top:hover {
+            background: #b08f50;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .nav-links {
+                gap: 15px;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-avatar {
+                width: 160px;
+                height: 160px;
+                font-size: 60px;
+            }
+            .top-bar .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <div class="logo">林予曦<span>·工作室</span></div>
+            <ul class="nav-links">
+                <li><a href="#profile">个人资料</a></li>
+                <li><a href="#works">代表作品</a></li>
+                <li><a href="#experience">演艺经历</a></li>
+                <li><a href="#news">最新动态</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 区域 -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>林予曦</h1>
+                    <div class="subtitle">中国内地女演员 · 清新自然表演风格</div>
+                    <p>林予曦，新生代女演员，凭借扎实的演技和独特的个人魅力，在影视剧中塑造了多个令人印象深刻的角色。</p>
+                    <p>她以细腻的情感表达和真实的表演方式，赢得了观众与业内人士的广泛认可，是近年来备受关注的实力派青年演员。</p>
+                </div>
+                <div class="hero-avatar">曦</div>
+            </div>
+        </section>
+
+        <!-- 个人资料 -->
+        <section class="info-section" id="profile">
+            <div class="container">
+                <h2 class="section-title">个人档案</h2>
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <div class="label">中文名</div>
+                        <div class="value">林予曦</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="label">国籍</div>
+                        <div class="value">中国</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="label">职业</div>
+                        <div class="value">演员</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="label">代表作品</div>
+                        <div class="value">多部影视剧集</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="label">特长</div>
+                        <div class="value">表演、舞蹈、声乐</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="label">粉丝昵称</div>
+                        <div class="value">曦光</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代表作品 -->
+        <section class="works-section" id="works">
+            <div class="container">
+                <h2 class="section-title">代表作品</h2>
+                <div class="works-grid">
+                    <article class="work-card">
+                        <div class="work-poster">🎬</div>
+                        <div class="work-info">
+                            <h3>都市情感剧</h3>
+                            <div class="meta">2024年 · 领衔主演</div>
+                            <p>饰演一位在都市中追寻自我价值的青年女性，细腻刻画了当代年轻人的情感困惑与成长。</p>
+                            <span class="tag">现代</span>
+                            <span class="tag">成长</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-poster">🎭</div>
+                        <div class="work-info">
+                            <h3>古装传奇剧</h3>
+                            <div class="meta">2023年 · 主演</div>
+                            <p>挑战古装角色，塑造了一位性格坚韧、聪慧过人的古代女子形象，广受好评。</p>
+                            <span class="tag">古装</span>
+                            <span class="tag">历史</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-poster">📖</div>
+                        <div class="work-info">
+                            <h3>青春校园电影</h3>
+                            <div class="meta">2022年 · 女主角</div>
+                            <p>清新自然的表演风格，完美诠释了青春岁月中的懵懂与纯真，引发观众共鸣。</p>
+                            <span class="tag">青春</span>
+                            <span class="tag">电影</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 演艺经历 -->
+        <section class="experience-section" id="experience">
+            <div class="container">
+                <h2 class="section-title">演艺经历</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="date">初入演艺圈</span>
+                        <h4>开启演艺之路</h4>
+                        <p>林予曦自出道以来，始终保持着对表演艺术的热爱与敬畏，从基础做起，逐步积累经验。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">发展时期</span>
+                        <h4>多类型角色尝试</h4>
+                        <p>在多个不同类型的剧集中担任重要角色，不断拓宽戏路，展现多样化的表演能力。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">近期</span>
+                        <h4>获得更多关注</h4>
+                        <p>凭借在作品中的出色表现，逐渐被更多观众认识，成为备受期待的青年演员。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新动态 -->
+        <section class="news-section" id="news">
+            <div class="container">
+                <h2 class="section-title">最新动态</h2>
+                <ul class="news-list">
+                    <li>
+                        <span class="news-date">近期</span>
+                        <span class="news-text">林予曦参与的新剧拍摄工作顺利进行中，敬请期待她的精彩表现。</span>
+                    </li>
+                    <li>
+                        <span class="news-date">近期</span>
+                        <span class="news-text">林予曦参加公益活动，关注弱势群体，传递正能量。</span>
+                    </li>
+                    <li>
+                        <span class="news-date">过往</span>
+                        <span class="news-text">林予曦在采访中分享拍摄趣事，展现真实率性一面。</span>
+                    </li>
+                    <li>
+                        <span class="news-date">过往</span>
+                        <span class="news-text">林予曦与粉丝互动，感谢一路以来的支持与陪伴。</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-item">
+                    <h3>林予曦的代表作品有哪些？</h3>
+                    <p>林予曦出演过多部影视作品，涵盖都市情感、古装传奇、青春校园等多种题材。具体作品信息可以关注官方渠道发布的内容。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何获取林予曦的最新动态？</h3>
+                    <p>可以通过关注林予曦的官方社交媒体账号，或留意本页面的动态更新，第一时间获取她的最新消息。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>林予曦未来有什么演艺计划？</h3>
+                    <p>关于未来的工作计划，建议以官方发布的信息为准。演员通常会根据剧本质量和角色契合度进行选择，相信她会带来更多优秀作品。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#profile">个人资料</a>
+                <a href="#works">代表作品</a>
+                <a href="#experience">演艺经历</a>
+                <a href="#news">最新动态</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <div class="copyright">
+                <p>© 2024 林予曦资料站 · 本页面为演员信息展示平台</p>
+                <p style="margin-top:5px; font-size:12px; color:#555;">本站内容为静态展示，非官方站点</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
+
+    <script>
+        // 回到顶部功能
+        var backTopBtn = document.getElementById('backTop');
+        backTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        // 滚动显示/隐藏按钮
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backTopBtn.style.display = 'flex';
+            } else {
+                backTopBtn.style.display = 'none';
+            }
+        });
+        // 初始隐藏
+        backTopBtn.style.display = 'none';
+    </script>
+</body>
+</html>
